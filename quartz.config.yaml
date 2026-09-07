@@ -152,6 +152,7 @@ plugins:
         "\\PicO": "\\textnormal {Pic}^\\circ",
         "\\CaCl": "\\textnormal {CaCl }",
         "\\Supp": "\\textnormal {Supp }",
+        "\\degf": "\\textnormal {deg}_f"
       }
     order: 80
   - source: "@quartz-community/citations"
