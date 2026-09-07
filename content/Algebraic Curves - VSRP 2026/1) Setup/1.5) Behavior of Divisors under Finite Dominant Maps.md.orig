@@ -1,0 +1,151 @@
+---
+publish: true
+created: 2026-09-07T11:32:41.789Z
+modified: 2026-09-07T18:48:46.511Z
+---
+
+### 1.5) Behavior of Divisors under Finite Maps
+
+#### Pulling Back Cartier Divisors
+
+Let $f:X\to Y$ be a dominant map of integral schemes. Then given a Cartier divisor on $Y$, we construct a Cartier divisor on $X$ such that it is _well-behaved_ on principal divisors.
+
+There is a map $\SK_Y\to f_*\SK(X)$ such that the following diagram commutes.
+
+$$
+\begin{CD}
+f_*\OX @>>> f_*\SK_X \\
+@AAA @AAA \\
+\SO_Y @>>> \SK_Y
+\end{CD}
+$$
+
+Since the map $f$ is dominant, we have a map $K(Y)\to K(X)$ and this gives the required map $\SK_Y\to f_*(\SK_X)$
+
+Also note that $(f_*\SO_X)^\times = f_*(\SO_X^\times)$.
+
+The exact sequence
+
+$$
+0\to \OX^\times\to\SK_X^\times\to \SK_X^\times/\OX^\times \to 0
+$$
+
+induces the exact sequence
+
+$$
+0\to f_*\OX^\times\to f_*\SK_X^\times \to f_*(\SK_X^\times/\OX^\times)
+$$
+
+And now, based on the commuting square above, we get
+
+$$
+\begin{CD}
+0 @>>> f_*\OX^\times @>>> f_*\SK_X^\times @>>> f_*(\SK_X^\times/\OX^\times) \\
+@. @AAA @AAA \\
+0 @>>> \SO_Y^\times @>>> \SK_Y^\times @>>> \SK_Y^\times/\SO_Y^\times @>>> 0 
+\end{CD}
+$$
+
+$\SO_Y^\times \to \SK_Y^\times \to f_*(\SK_X^\times/\OX^\times)$ is the zero map since the diagram commutes and thus we get a map $\SK_Y^\times\SO_Y^\times \to f_*(\SK_X^\times/\SO_X^\times)$.
+
+> [!yellowbox]+ **Definition 1.5.1**: (Pulling back Cartier divisors)
+> Given $f: X\to Y$ dominant map of integral schemes, taking global sections of the map $\SK_Y^\times\SO_Y^\times \to f_*(\SK_X^\times/\SO_X^\times)$, we get a map $f^*_C:\Gamma(Y,\SK_Y^\times/\SO_Y^\times) \to \Gamma(X,\SK_X^\times/\SO_X^\times)$, pulling back Cartier divisors on $Y$ to Cartier divisors on $X$
+
+On principal Cartier divisors, this map is $(s,Y) \mapsto (\varphi(s), X)$.
+Following this, an arbitrary Cartier divisor $\set{(s_i,V_i)} \mapsto \set{(\varphi(s_i),f\inv(V_i))}$
+
+#### Pulling back Weil Divisors
+
+Hartshorne defines these only for curves.
+But the same definition works for dominant maps and commutes with pulling back the corresponding Cartier Divisor.
+
+> [!yellowbox]+ **Definition 1.5.2**: $f^*: \Div Y \to \Div X$
+> Let $f:X\to Y$ be a dominant map of Noetherian integral schemes regular in codimension 1. Then we define $f^*:\Div Y \to \Div  X$ by defining it on prime divisors as follows:
+> \
+> Let $Z$ be prime divisor with generic point $\eta$. Then there are finitely many points in $f\inv(\eta)$ corresponding to co-dimension one subschemes because they would be irreducible components of $f\inv(Z)$ which is closed subset of a Noetherian scheme $X$. Further, since $f$ is dominant, we have $\varphi: K(Y)\to K(X)$
+> \
+> Suppose these points are  $\set{x_1,\dots,x_m}$ and $x_i$ corresponds to the prime divisor $W_i$.  Let $s$ be a local parameter at $\eta$, i.e., generator of the maximal ideal of $\SO_{Y,\eta}$.
+> \
+> Set $f^*(Z) =\Sigma_{i=1}^m\ \nu_{W_i}(\varphi(s)) \ W_i$.
+> Extend linearly to get $f^*:\Div Y \to \Div X$
+
+^64368c
+
+> [!greenbox]+ **Lemma 1.5.3**:
+> Let $f: X\to Y$ be a dominant map of Noetherian normal locally factorial schemes.
+> Then the following square commutes:
+>
+> $$
+> \begin{CD}
+> \Div Y @= \Gamma(X,\SK_Y^\times/\SO_Y^\times)\\
+> @Vf^*VV @Vf^*_CVV\\
+> \Div X @= \Gamma(X,\SK_Y^\times/\SO_Y^\times)
+> \end{CD}
+> $$
+
+> [!proof]- _Proof_:
+> It is enough to show this for prime divisors.
+> \
+> Suppose a prime divisor $Z \leftrightarrow \set{(s_i,U_i)}$. Pick an index $j$ such that the open set $U_j$ contains $\eta_Z$.
+> Then $\nu_Z(s_j) = 1$, thus it is a local parameter for $Z$.
+> So, $f^*(Z) =\Sigma_{i=1}^m\ \nu_{W_i}(\varphi(s_j)) \ W_i$ with notation as above ([[#^64368c|Definition]]) 1.52
+> \
+> $f^*_C(\set{(s_i,U_i)}) = \set{(\varphi(s_i),f\inv(U_i))}$.
+> Each of $W_i$ intersect $f\inv(U_j)$, since their generic points are there. Coefficient of $W_i$ can be calculated using $\varphi(s_j)$, which is $\nu_{W_i}(\varphi(s_j))$. This matches $f^*(Z)$
+> \
+> Now let $W$ be such that its generic point $x$ does not map to $\eta_Z$.
+> Suppose $f(x) \in U_i$. Then $x \in f\inv(U_i)$ and coefficient of $W$ can be calculated using $\varphi(s_i)$.
+> \
+> But note that we have a map $\varphi: \SO_{Y,f(x)} \to \OXx$ and since $f(x) \neq \eta$, $\nu_{f(x)}(s_i) = 0$. So $s_i$ is a unit in $\SO_{Y,f(x)}$ and $\varphi(s_i)$ is a unit in $\OXx$
+> Thus coefficient of $W$ is $0$.
+> \
+> This shows $f^*(Z) \leftrightarrow f^*_C\set{(s_i,U_i)}$ and thus the square commutes.
+
+#### Relative Degree and Pullback of Divisors
+
+> [!yellowbox]+ **Definition 1.5.4**: (Degree of a finite dominant map)
+> If $f:X\to Y$ is a finite dominant map of integral schemes, then
+> $\deg f = [K(X): K(Y)]$
+
+> [!yellowbox]+ **Definition 1.5.5**: (Relative Degree $\degf$)
+> Let $f: X\to Y$ be a finite dominant map of Noetherian normal schemes.
+> Given a prime divisor $W$ of $X$ with generic point $x$, define its degree relative to $f$ as
+> $\degf W = [\kk(x):\kk(f(x))]$
+> Extend linearly to get a map $\degf: \Div X \to \ZZ$
+
+^bff06b
+
+On $\Div Y$, we use the standard degree function $\deg(\Sigma \ n_iZ_i) = \Sigma \ n_i$
+
+> [!greenbox]+ **Proposition 1.5.6**:
+> If $f: X\to Y$ is a finite dominant map of Noetherian normal schemes, then given a Weil divisor $D \in \Div Y$,
+>
+> $$
+> \degf f^*(D) = \deg f \ \deg D
+> $$
+
+^a5ce59
+
+> [!proof]- _Proof_:
+> Enough to show that for a prime divisor $Z$, $\degf f^*(Z) = \deg f$
+> \
+> Let the generic point of $Z$ be $y$. Picking an affine open neighborhood of $y$, its preimage is affine and contains all points over $y$. Thus we may assume $X,Y$ to be affine, $\Spec B, \Spec A$ respectively.
+> \
+> Suppose $y$ corresponds to the prime ideal $p$ of $A$. By $B_p$ denote $S\inv B$ where $S = A - p$
+> We have the following diagram:
+>
+> $$
+> \begin{CD}
+> K(Y) @>>> K(X) \\
+> @AAA @AAA \\
+> A_p @>>> B_p
+> \end{CD}
+> $$
+>
+> Since $B$ is integral over $A$ and $X$ is normal, hence $B$ is integrally closed in $K(X)$, we have that $B$ is the integral closure of $A$ in $K(X)$.
+> So, $B_p$ is the integral closure of $A_p$ in $K(X)$.
+> \
+> Further, $A_p$ is a DVR, hence a Dedekind domain, so, $B_p$ is also a Dedekind domain and the square above fits into the standard $AKLB$-setup from Algebraic Number Theory.
+> \
+> If $q$ is a prime ideal of $B_p$ over $p$, then the inertia degree $f(q|p) = \degf \bar{\set{[q]}}$ and if $s$ is the local parameter at $p$, then $e(q|p) =\nu_q(\varphi(s))$.
+> Thus $\degf f^*(Z) = \Sigma e_if_i = [K(X):K(Y)] = \deg f$
