@@ -95,6 +95,64 @@ plugins:
     enabled: true
     options:
       renderEngine: katex
+      customMacros: {
+        "\\RR": "\\mathbb R",
+        "\\ZZ": "\\mathbb Z",
+
+        "\\set": "\\{#1\\}",
+        "\\inv": "^{-1}",
+        "\\fall": "\\ \\forall \\ ",
+        "\\texists": "\\ \\exists \\ ",
+
+        "\\id": "\\textnormal {id}",
+        "\\Hom": "\\textnormal {Hom}",
+        "\\dim": "\\textnormal {dim}",
+        "\\Dim": "\\textnormal {Dim }",
+        "\\deg": "\\textnormal {deg }",
+        "\\Der": "\\textnormal {Der}",
+        "\\Dims": "\\textnormal{Dim}_{#1}",
+
+        "\\det": "\\textnormal{det }",
+        
+        "\\tfrac": "{}^\\Huge{#1}/{}_{\\Huge{#2}}",
+        
+        "\\del": "\\partial",
+        "\\deldel": "\\frac \\del {\\del #1}",
+        "\\parde": "\\frac {\\del #1} {\\del #2}",
+
+        "\\fm": "\\mathfrak m",
+
+        "\\SO": "\\mathscr O",
+        "\\SK": "\\mathscr K",
+        "\\SL": "\\mathscr L",
+        "\\SF": "\\mathscr F",
+        "\\SG": "\\mathscr G",
+        "\\SH": "\\mathscr H",
+        "\\SI": "\\mathscr I",
+
+        "\\MCO": "\\mathcal O",
+        
+        "\\PP": "\\mathbb P",
+        "\\AA": "\\mathbb A",
+        "\\kk": "\\mathbb k",
+
+        "\\OX": "\\mathscr O_X",
+        "\\OXx": "\\mathscr O_{X,x}",
+        "\\OXP": "\\mathscr O_{X,P}",
+
+        "\\SHom": "\\mathscr {Hom}",
+
+        "\\Spec": "\\textnormal{Spec }",
+        "\\Frac": "\\textnormal{Frac }",
+
+        "\\Div": "\\textnormal {Div }",
+        "\\Divx": "\\textnormal {Div}_x",
+        "\\Cl": "\\textnormal {Cl }",
+        "\\Pic": "\\textnormal {Pic }",
+        "\\PicO": "\\textnormal {Pic}^\\circ",
+        "\\CaCl": "\\textnormal {CaCl }",
+        "\\Supp": "\\textnormal {Supp }",
+      }
     order: 80
   - source: "@quartz-community/citations"
     enabled: false
