@@ -1,3 +1,205 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+:root{
+    --mathbox_border_radius: 10px;
+    --mathbox_border_width: 1px;
+    --mathbox_padding: 20px;
+/*---------------------------------------------------------*/ 
+    --yellowbox_bg_light: rgba(255, 255, 0, 0.1);
+    --yellowbox_text_light: rgb(38, 0, 0);
+    --yellowbox_border_light: #5d1601;
+
+    --yellowbox_bg_dark: rgba(168, 128, 0, 0.1);
+    --yellowbox_text_dark: rgb(231, 225, 126);
+/*---------------------------------------------------------*/ 
+    --bluebox_bg_light: rgba(17,184,184,0.05);
+    --bluebox_text_light: rgb(0, 51, 64);
+    --bluebox_text_light_body: rgb(0, 30, 45);
+    --bluebox_border_light: #000077;
+
+    --bluebox_bg_dark: rgba(0, 166, 166, 0.1);
+    --bluebox_text_dark: rgb(179, 209, 255);
+/*---------------------------------------------------------*/ 
+    --greenbox_bg_light: rgba(154,255,29,0.11);
+    --greenbox_text_light: rgb(0, 41, 24);
+    --greenbox_border_light: #143200;
+
+    --greenbox_bg_dark: rgba(101, 166, 23, 0.11);
+    --greenbox_text_dark: rgb(159, 249, 213);
+/*---------------------------------------------------------*/ 
+    --orangebox_bg_light: rgba(255,79,0,0.08);
+    --orangebox_text_light: rgb(0, 51, 15);
+    --orangebox_border_light: #823d00;
+
+    --orangebox_bg_dark: rgba(191, 59, 0, 0.1);
+    --orangebox_text_dark: rgb(255, 212, 179);
+}
+
+/*----------------------------------------------------------------------------------------------*/
+.callout  .callout-content p {
+     margin-top: 10px;
+     margin-bottom: 0px;
+}
+/*--------------------------Proof--------------------------*/
+.callout[data-callout="proof"] {
+    .callout-icon {
+        display: none;
+    }
+    background-color: rgba(255,255,255,0);
+    padding: 20px;
+}
+.callout[data-callout="proof"] > .callout-title {
+    text-align: left;
+    padding: 0px;
+    color: black;
+    text-transform: none;
+    font-weight: 100;
+}
+.theme-dark .callout[data-callout="proof"]>.callout-title{
+    color: white;
+}
+.callout[data-callout="proof"] > .callout-content p {
+    margin: 0px;
+}
+/*------------------------------------------------------------------Yellow Box------------------------------------------------------------------*/
+.callout[data-callout="yellowbox"] {
+    .callout-icon {
+        display: none;
+    }
+    background-color: var(--yellowbox_bg_light);
+    border: var(--mathbox_border_width) solid var(--yellowbox_border_light);
+    border-radius: var(--mathbox_border_radius);
+    padding: var(--mathbox_padding);
+    /*color: var(--yellowbox_text_light);*/
+}
+.callout[data-callout="yellowbox"] > .callout-title {
+    text-align: left;
+    color: var(--yellowbox_text_light);
+    padding: 0px;
+}
+
+.theme-dark .callout[data-callout="yellowbox"]>.callout-title{
+    color: var(--yellowbox_text_dark);
+}
+.theme-dark .callout[data-callout="yellowbox"]{
+    border: 0px;
+    background-color: var(--yellowbox_bg_dark);
+    /*color: var(--yellowbox_text_dark);*/
+}
+/*------------------------------------------------------------------Blue Box------------------------------------------------------------------*/
+.callout[data-callout="bluebox"] {
+    .callout-icon {
+        display: none;
+    }
+    background-color: var(--bluebox_bg_light);
+    border: var(--mathbox_border_width) solid var(--bluebox_border_light);
+    border-radius: var(--mathbox_border_radius);
+    padding: var(--mathbox_padding);
+    /*color: var(--bluebox_text_light_body)*/
+}
+.callout[data-callout="bluebox"] > .callout-title {
+    text-align: left;
+    color: var(--bluebox_text_light);
+}
+.theme-dark .callout[data-callout="bluebox"]{
+    border: 0px;
+    background-color: var(--bluebox_bg_dark);
+    /*color: var(--bluebox_text_dark)*/
+}
+.theme-dark .callout[data-callout="bluebox"]>.callout-title{
+    color: var(--bluebox_text_dark);
+}
+/*------------------------------------------------------------------Green Box------------------------------------------------------------------*/
+.callout[data-callout="greenbox"] {
+    .callout-icon {
+        display: none;
+    }
+    background-color: var(--greenbox_bg_light);
+    border: var(--mathbox_border_width) solid var(--greenbox_border_light);
+    border-radius: var(--mathbox_border_radius);
+    padding: var(--mathbox_padding);
+    /*color: var(--greenbox_text_light);*/
+}
+.callout[data-callout="greenbox"] > .callout-title {
+    text-align: left;
+    color: var(--greenbox_text_light);
+    padding: 0px;
+}
+
+.theme-dark .callout[data-callout="greenbox"]>.callout-title{
+    color: var(--greenbox_text_dark);
+}
+.theme-dark .callout[data-callout="greenbox"]{
+    border: 0px;
+    background-color: var(--greenbox_bg_dark);
+   /* color: var(--greenbox_text_dark);*/
+}
+/*------------------------------------------------------------------Orange Box------------------------------------------------------------------*/
+.callout[data-callout="orangebox"] {
+    .callout-icon {
+        display: none;
+    }
+    background-color: var(--orangebox_bg_light);
+    border: var(--mathbox_border_width) solid var(--orangebox_border_light);
+    border-radius: var(--mathbox_border_radius);
+    padding: var(--mathbox_padding);
+    /*color: var(--orangebox_text_light);*/
+}
+.callout[data-callout="orangebox"] > .callout-title {
+    text-align: left;
+    color: var(--orangebox_text_light);
+    padding: 0px;
+}
+
+.theme-dark .callout[data-callout="orangebox"]>.callout-title{
+    color: var(--orangebox_text_dark);
+}
+.theme-dark .callout[data-callout="orangebox"]{
+    border: 0px;
+    background-color: var(--orangebox_bg_dark);
+    /*color: var(--orangebox_text_dark);*/
+}
+
+/*------------------------------------------------------------------S Blue Box------------------------------------------------------------------*/
+.callout[data-callout="sbluebox"] {
+    .callout-icon {
+        display: none;
+    }
+    background-color: rgba(0,0,0,0);
+    padding: 0px;
+}
+.callout[data-callout="sbluebox"] > .callout-title {
+    text-align: left;
+    color: rgb(0, 51, 64);
+    background-color: rgba(17,184,184,0.05);
+    border: 1px solid Blue;
+    border-radius: 10px;
+    padding: 7px;
+}
+.theme-dark .callout[data-callout="sbluebox"]>.callout-title{
+    border: 0px;
+    background-color: rgba(122, 166, 235,0.1);
+    color: rgb(174, 206, 255);  
+}
+/*------------------------------------------------------------------S Yellow Box------------------------------------------------------------------*/
+.callout[data-callout="syellowbox"] {
+    .callout-icon {
+        display: none;
+    }
+    background-color: rgba(0,0,0,0);
+    padding: 0px;
+}
+.callout[data-callout="syellowbox"] > .callout-title {
+    text-align: left;
+    color: rgb(38, 9, 0);
+    background-color: rgba(255,255,0,0.1);
+    border: 1px solid #5d1601;
+    border-radius: 10px;
+    padding: 7px;
+}
+.theme-dark .callout[data-callout="syellowbox"]>.callout-title{
+    border: 0px;
+    background-color: rgba(168, 128, 0,0.1);
+    color: rgb(224, 218, 96);
+}
