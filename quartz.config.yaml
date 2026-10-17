@@ -28,7 +28,7 @@ configuration:
         dark: "#2b2b2b"
         secondary: "#284b63"
         tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
+        highlight: rgba(143, 159, 169, 0)
         textHighlight: "#fff23688"
       darkMode:
         light: "#161618"
@@ -38,11 +38,11 @@ configuration:
         dark: "#ebebec"
         secondary: "#7b97aa"
         tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
+        highlight: rgba(143, 159, 169, 0)
         textHighlight: "#b3aa0288"
 plugins:
   - source: "@quartz-community/created-modified-date"
-    enabled: true
+    enabled: false
     options:
       defaultDateType: modified
       priority:
@@ -62,7 +62,7 @@ plugins:
     enabled: true
     options:
       comments: true
-      highlight: true
+      highlight: false
       wikilinks: true
       callouts: true
       mermaid: true
@@ -145,6 +145,8 @@ plugins:
         "\\Spec": "\\textnormal{Spec }",
         "\\Frac": "\\textnormal{Frac }",
 
+        "\\Xreg": "X_{\\textnormal{reg}}",
+
         "\\Div": "\\textnormal {Div }",
         "\\Divx": "\\textnormal {Div}_x",
         "\\Cl": "\\textnormal {Cl }",
@@ -218,7 +220,9 @@ plugins:
         "minimal-style@@h5-weight": 500,
         "minimal-style@@h6-size": "0.95em",
         "minimal-style@@ax1@@light": "#5100B2",
-        "minimal-style@@ax2@@light": "#001DB2"
+        "minimal-style@@ax2@@light": "#001DB2",
+
+        "minimal-style@@hl2@@dark": "#202020"
       }
   - source: "@quartz-community/remove-draft"
     enabled: true
