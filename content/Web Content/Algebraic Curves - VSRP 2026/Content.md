@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-07-11T09:11:22.606Z
-modified: 2026-09-13T06:09:26.736Z
+modified: 2026-10-16T17:49:48.283Z
 ---
 
 Weil Divisors, Cartier Divisors and Invertible Sheaves
@@ -10,7 +10,7 @@ Weil Divisors, Cartier Divisors and Invertible Sheaves
 - [[1.2) Cartier Divisors|1.2) Cartier Divisor]]
 - [[1.3) Invertible Sheaves|1.3) Invertible Sheaves]]
 - [[1.4) Maps to Projective Spaces and Linear Systems|1.4) Maps to Projective Spaces and Linear Systems]]
-- [[1.5) Behavior of Divisors under Finite Dominant Maps|1.5) Behavior of Divisors]]
+- [[1.5) Behavior of Divisors under Finite Dominant Maps|1.5) Behavior of Divisors under Finite Dominant Maps]]
 
 Sheaf Cohomological Results
 
