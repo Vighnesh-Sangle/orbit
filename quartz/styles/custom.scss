@@ -36,6 +36,69 @@
     --orangebox_text_dark: rgb(255, 212, 179);
 }
 
+:root[saved-theme="light"] {
+    --sidebar-bg: #e0e0e0;
+    --proofborder: #afafaf; 
+}
+
+:root[saved-theme="dark"] {
+    --sidebar-bg: #151515;
+    --proofborder: #3f3f3f;
+}
+
+/* Fix that works with themes, but couldn't figure out how to make with work light/dark mode
+article p{
+    color: #000000;
+}
+
+article p{
+    color: #D1D1D1;
+}
+
+article .callout-title p{
+    color: inherit
+}*/
+
+//=======katex========
+
+.katex {
+  font-size: 1.1em !important; /* Adjust to 1em or 1.1em depending on your preference */
+  color: inherit;
+}
+
+//=======Font and Weights=======
+strong {
+  font-weight: 2000;
+}
+
+
+//=======Layout Elements=======
+ 
+//Body affects the entire page, not just the center
+
+/*.center,
+.page > #quartz-body > .center {
+    background-color: #5d1601;
+}*/ //Affects the center thing, but padding creates issues. So margins are introduced from sidebars
+
+.page > #quartz-body .sidebar {
+    background-color: var(--sidebar-bg);
+}
+
+.page > #quartz-body .sidebar.left{
+    margin-right: 1em;
+}
+
+.page > #quartz-body .sidebar.right{
+    margin-left: 1em;
+}
+
+//=======Callouts=======
+.callout >.callout-title strong{
+    color: inherit;
+}
+
+
 /*----------------------------------------------------------------------------------------------*/
 .callout  .callout-content p {
      margin-top: 10px;
@@ -48,16 +111,17 @@
     }
     background-color: rgba(255,255,255,0);
     padding: 20px;
+    border-color: var(--proofborder);
 }
 .callout[data-callout="proof"] > .callout-title {
     text-align: left;
     padding: 0px;
-    color: black;
+    --color: black;
     text-transform: none;
     font-weight: 100;
 }
 .theme-dark .callout[data-callout="proof"]>.callout-title{
-    color: white;
+    --color: white;
 }
 .callout[data-callout="proof"] > .callout-content p {
     margin: 0px;
@@ -71,21 +135,22 @@
     border: var(--mathbox_border_width) solid var(--yellowbox_border_light);
     border-radius: var(--mathbox_border_radius);
     padding: var(--mathbox_padding);
-    /*color: var(--yellowbox_text_light);*/
+    //color: var(--yellowbox_text_light);
 }
 .callout[data-callout="yellowbox"] > .callout-title {
     text-align: left;
-    color: var(--yellowbox_text_light);
+    --color: var(--yellowbox_text_light); //--
     padding: 0px;
 }
 
 .theme-dark .callout[data-callout="yellowbox"]>.callout-title{
-    color: var(--yellowbox_text_dark);
+    --color: var(--yellowbox_text_dark); //--
 }
+
 .theme-dark .callout[data-callout="yellowbox"]{
     border: 0px;
     background-color: var(--yellowbox_bg_dark);
-    /*color: var(--yellowbox_text_dark);*/
+    //color: var(--yellowbox_text_dark) !important;
 }
 /*------------------------------------------------------------------Blue Box------------------------------------------------------------------*/
 .callout[data-callout="bluebox"] {
@@ -100,7 +165,7 @@
 }
 .callout[data-callout="bluebox"] > .callout-title {
     text-align: left;
-    color: var(--bluebox_text_light);
+    --color: var(--bluebox_text_light);
 }
 .theme-dark .callout[data-callout="bluebox"]{
     border: 0px;
@@ -108,7 +173,7 @@
     /*color: var(--bluebox_text_dark)*/
 }
 .theme-dark .callout[data-callout="bluebox"]>.callout-title{
-    color: var(--bluebox_text_dark);
+    --color: var(--bluebox_text_dark);
 }
 /*------------------------------------------------------------------Green Box------------------------------------------------------------------*/
 .callout[data-callout="greenbox"] {
@@ -123,12 +188,12 @@
 }
 .callout[data-callout="greenbox"] > .callout-title {
     text-align: left;
-    color: var(--greenbox_text_light);
+    --color: var(--greenbox_text_light);
     padding: 0px;
 }
 
 .theme-dark .callout[data-callout="greenbox"]>.callout-title{
-    color: var(--greenbox_text_dark);
+    --color: var(--greenbox_text_dark);
 }
 .theme-dark .callout[data-callout="greenbox"]{
     border: 0px;
@@ -148,12 +213,12 @@
 }
 .callout[data-callout="orangebox"] > .callout-title {
     text-align: left;
-    color: var(--orangebox_text_light);
+    --color: var(--orangebox_text_light);
     padding: 0px;
 }
 
 .theme-dark .callout[data-callout="orangebox"]>.callout-title{
-    color: var(--orangebox_text_dark);
+    --color: var(--orangebox_text_dark);
 }
 .theme-dark .callout[data-callout="orangebox"]{
     border: 0px;
