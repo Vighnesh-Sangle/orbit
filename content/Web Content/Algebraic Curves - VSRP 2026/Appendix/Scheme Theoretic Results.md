@@ -1,26 +1,26 @@
 ---
 publish: true
 created: 2026-09-03T15:59:00.065Z
-modified: 2026-09-08T15:37:27.261Z
+modified: 2026-10-19T21:35:44.900Z
 ---
 
-> [!yellowbox]+ **Definition**: (Constructible set)
+> [!yellowbox]+ **Definition SC.1**: (Constructible set)
 > A subset $Z$ of a scheme $X$ is said to be constructible if it can written as a finite disjoint union of locally closed sets.
 
-> [!orangebox]+ **Theorem**: (Chevalley's Theorem) (Hartshorne II Exercise 3.9)
+> [!orangebox]+ **Theorem SC.2**: (Chevalley's Theorem) (Hartshorne II Exercise 3.9)
 > Let $f: X\to Y$ be a morphism of finite type of Noetherian schemes. Then the image of every constructible subset of $X$ is a constructible subset of $Y$.
 
 ^020957
 
-> [!bluebox]+ **Lemma**: (Hartshorn I Exercise 1.6)
+> [!bluebox]+ **Lemma SC.3**: (Hartshorn I Exercise 1.6)
 > Let $X$ be a topological space and $A$ irreducible subset, then $\bar A$ the closure of $A$ in $X$ is an irreducible closed subset of $X$.
 
-> [!bluebox]+ **Lemma**: (Hartshorne I Exercise 1.10(a))
+> [!bluebox]+ **Lemma SC.4**: (Hartshorne I Exercise 1.10(a))
 > If $Y$ is any subset of a topological space $X$, then $\Dim Y \leq \Dim X$
 
 ^9b4a24
 
-> [!greenbox]+ **Proposition**:
+> [!greenbox]+ **Proposition SC.5**:
 > Let $f: X\to Y$ be a morphism of varieties. Then the closure of $f(X)$ in $Y$ has dimension at most the dimension of $X$.
 
 ^34e12f
